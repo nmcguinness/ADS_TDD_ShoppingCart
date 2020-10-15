@@ -32,9 +32,9 @@ void demoOperatorAndCopy(){
 void demoEmplace()
 {
     Book a("AAAA", 100);
-  //  Book b("BBBB", 68);
-  //  Book c("CCCC", 240);
-    list<Book> bookList1 = { a };// , b, c
+    Book b("BBBB", 68);
+    Book c("CCCC", 240);
+    list<Book> bookList1 = { a , b, c };
 }
 
 void demoReferenceAndPointerInDataStructure()
