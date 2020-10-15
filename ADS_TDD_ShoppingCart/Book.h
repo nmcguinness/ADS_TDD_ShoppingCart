@@ -31,5 +31,11 @@ public:
 		this->price = other.getPrice();
 		this->title = other.getTitle();
 	}
+
+	friend ostream& operator<<(ostream& os, const Book& book) {
+		os << book.title << " - " << book.price << endl;
+		return os;
+	}
 };
+
 
