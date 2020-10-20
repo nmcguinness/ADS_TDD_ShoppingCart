@@ -11,16 +11,15 @@ private:
 	double price;
 
 public:
-	Book(string title, double price) : title(title), price(price) { cout << "Constructor..." << endl; };
+	Book(string title, double price) : title(title), price(price) { };
 	
 	//copy constructor
 	Book(const Book& other) {
-		cout << "Copy Constructor..." << endl;
 		this->price = other.getPrice();
 		this->title = other.getTitle();
 	}
 	
-	~Book() { cout << "Destructor..." << endl; };
+	~Book() { };
 
 	//getters/setters
 	string getTitle() const { return this->title; }
