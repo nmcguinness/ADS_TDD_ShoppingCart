@@ -68,7 +68,7 @@ public:
 
 	bool checkout() {
 		if (books.size() == 0)
-			return false; // throw std::logic_error("Books list is empty!");
+			throw std::logic_error("Books list is empty!");
 
 		books.clear();
 		return true;

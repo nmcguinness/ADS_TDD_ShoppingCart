@@ -23,6 +23,8 @@ namespace ShoppingCartTest
 	{
 		Book* b1, * b2, * b3;
 	public:
+
+		/// @brief Called before any TEST_METHODs are executed
 		TEST_METHOD_INITIALIZE(setup)
 		{
 			b1 = new Book("The associate", 9.99);
@@ -30,6 +32,7 @@ namespace ShoppingCartTest
 			b3 = new Book("The Judges List", 19.99);
 		}
 
+		/// @brief Called after all TEST_METHODs have been executed
 		TEST_METHOD_CLEANUP(teardown)
 		{
 			delete b1;
@@ -39,23 +42,14 @@ namespace ShoppingCartTest
 		TEST_METHOD(TestAddBook)
 		{
 			ShoppingCart cart;
-			try {
-				Assert::IsTrue(cart.addBook(b1));
-			}
-			catch (std::logic_error e)
-			{
-			}
+			Assert::IsTrue(cart.addBook(b1));
 		}
 
 		TEST_METHOD(TestAddNoBook)
 		{
 			ShoppingCart c;
-			try {
-				Assert::IsFalse(c.addBook(nullptr));
-			}
-			catch (std::logic_error e)
-			{
-			}
+			auto func = [&c] {c.addBook(nullptr); };
+			Assert::ExpectException<logic_error>(func, L"Error Not Thrown");
 		}
 
 		TEST_METHOD(testAddAllWithnullptrInList)
@@ -65,13 +59,8 @@ namespace ShoppingCartTest
 			books.push_back(b1);
 			books.push_back(b2);
 			books.push_back(nullptr);
-			try {
-				Assert::AreEqual(2, c.addAllBooks(books));
-				Assert::AreEqual(2, c.size());
-			}
-			catch (std::logic_error e)
-			{
-			}
+			Assert::AreEqual(2, c.addAllBooks(books));
+			Assert::AreEqual(2, c.size());
 		}
 		TEST_METHOD(testAddAllWithBooksList)
 		{
@@ -143,10 +132,10 @@ namespace ShoppingCartTest
 
 		TEST_METHOD(testCheckoutNoItems)
 		{
-			/*ShoppingCart c;
+			ShoppingCart c;
 			auto func = [&c] {c.checkout(); };
 			Assert::ExpectException<logic_error>
-				(func, L"Derek, Error Not Thrown");*/
+				(func, L"Error Not Thrown");
 		}
 		TEST_METHOD(testCheckoutMultiple)
 		{
