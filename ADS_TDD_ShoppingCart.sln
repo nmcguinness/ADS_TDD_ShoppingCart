@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30523.141
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADS_TDD_ShoppingCart", "ADS_TDD_ShoppingCart\ADS_TDD_ShoppingCart.vcxproj", "{6DDAC0C6-592D-4D02-A14C-EF522F73EB0B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShoppingCartTests", "ShoppingCartTests\ShoppingCartTests.vcxproj", "{A4E69323-FF14-43DE-9D2F-43F14141A8CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests_ShoppingCart", "Tests_ShoppingCart\Tests_ShoppingCart.vcxproj", "{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +23,14 @@ Global
 		{6DDAC0C6-592D-4D02-A14C-EF522F73EB0B}.Release|x64.Build.0 = Release|x64
 		{6DDAC0C6-592D-4D02-A14C-EF522F73EB0B}.Release|x86.ActiveCfg = Release|Win32
 		{6DDAC0C6-592D-4D02-A14C-EF522F73EB0B}.Release|x86.Build.0 = Release|Win32
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Debug|x64.ActiveCfg = Debug|x64
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Debug|x64.Build.0 = Debug|x64
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Debug|x86.ActiveCfg = Debug|Win32
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Debug|x86.Build.0 = Debug|Win32
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Release|x64.ActiveCfg = Release|x64
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Release|x64.Build.0 = Release|x64
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Release|x86.ActiveCfg = Release|Win32
-		{A4E69323-FF14-43DE-9D2F-43F14141A8CE}.Release|x86.Build.0 = Release|Win32
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Debug|x64.ActiveCfg = Debug|x64
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Debug|x64.Build.0 = Debug|x64
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Debug|x86.ActiveCfg = Debug|Win32
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Debug|x86.Build.0 = Debug|Win32
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Release|x64.ActiveCfg = Release|x64
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Release|x64.Build.0 = Release|x64
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Release|x86.ActiveCfg = Release|Win32
+		{33B5A672-B0C3-4FC3-8C5D-94AE99ADAD22}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

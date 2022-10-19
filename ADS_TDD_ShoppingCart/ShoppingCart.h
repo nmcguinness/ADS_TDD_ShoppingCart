@@ -4,6 +4,7 @@
 using std::list;
 class ShoppingCart
 {
+private:
 	list<Book*> books;
 
 public:
@@ -12,7 +13,6 @@ public:
 	~ShoppingCart() {};
 
 	bool addBook(Book* b) {
-
 		if (b == nullptr)
 			throw std::logic_error("Cannot add pointer to null!");
 
@@ -20,7 +20,6 @@ public:
 	};
 
 	int addAllBooks(list<Book*> bks) {
-		
 		//throw on nullptr for bks
 		if (bks.size() == 0)
 			return 0;
@@ -33,6 +32,9 @@ public:
 	};
 
 	Book* getBookByTitle(string title) {
+		//	if (title == nullptr_t)
+		//		return nullptr;
+
 		for (Book* b : books) {
 			if (b->getTitle() == title)
 				return b;
@@ -42,18 +44,12 @@ public:
 
 	//an improved version of the search function
 	Book* findBy() {
-
 	}
-	
-	bool remove(Book* b) {
-		//auto it = books.begin();
-		//list<Book*>::iterator it = books.begin();
-		//list<Book*>::const_iterator it = books.begin();
 
+	bool remove(Book* b) {
 		//iterator is address of the first element in the list
 		for (auto it = books.begin(); it != books.end(); it++) {
-			if (*it == b) { //does the element pointed to by the iterator store the address of b
-
+			if (*it == b) {
 				//remove the element in the list and move the iterator back one element
 				it = books.erase(it);
 				return true;
@@ -61,7 +57,6 @@ public:
 		}
 		return false;
 	};
-	
 
 	double getSubtotal() {
 		double sum = 0;
@@ -70,21 +65,20 @@ public:
 		}
 		return sum;
 	};
-	
+
 	bool checkout() {
 		if (books.size() == 0)
-			throw std::logic_error("Books list is empty!");
+			return false; // throw std::logic_error("Books list is empty!");
 
 		books.clear();
 		return true;
 	};
-	
+
 	bool isEmpty() {
 		return size() == 0;
 	};
-	
+
 	int size() {
 		return books.size();
 	};
 };
-
