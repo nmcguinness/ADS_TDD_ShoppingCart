@@ -45,13 +45,6 @@ namespace ShoppingCartTest
 			Assert::IsTrue(cart.addBook(b1));
 		}
 
-		TEST_METHOD(TestAddNoBook)
-		{
-			ShoppingCart c;
-			auto func = [&c] {c.addBook(nullptr); };
-			Assert::ExpectException<logic_error>(func, L"Error Not Thrown");
-		}
-
 		TEST_METHOD(testAddAllWithnullptrInList)
 		{
 			ShoppingCart c;
@@ -130,13 +123,6 @@ namespace ShoppingCartTest
 			Assert::AreEqual(29.98, c.getSubtotal(), 0.01);
 		}
 
-		TEST_METHOD(testCheckoutNoItems)
-		{
-			ShoppingCart c;
-			auto func = [&c] {c.checkout(); };
-			Assert::ExpectException<logic_error>
-				(func, L"Error Not Thrown");
-		}
 		TEST_METHOD(testCheckoutMultiple)
 		{
 			ShoppingCart c;
@@ -178,6 +164,23 @@ namespace ShoppingCartTest
 			c.addBook(b3);
 			Book* bookRet = c.getBookByTitle("Sparring Partners");
 			Assert::IsNull(bookRet);
+		}
+
+		/******************** MORE COMPLEX TESTS THAT TEST FOR EXCEPTION USING A FUNCTOR ********************/
+
+		TEST_METHOD(TestAddNoBook)
+		{
+			ShoppingCart c;
+			auto func = [&c] {c.addBook(nullptr); };
+			Assert::ExpectException<logic_error>(func, L"Error Not Thrown");
+		}
+
+		TEST_METHOD(testCheckoutNoItems)
+		{
+			ShoppingCart c;
+			auto func = [&c] {c.checkout(); };
+			Assert::ExpectException<logic_error>
+				(func, L"Error Not Thrown");
 		}
 	};
 }
